@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E369F51197F8AC6009EDBCB /* NSObject+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F50197F8AC6009EDBCB /* NSObject+Helper.m */; };
+		1E369F55197F999D009EDBCB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F53197F999D009EDBCB /* MainViewController.m */; };
+		1E369F56197F999D009EDBCB /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E369F54197F999D009EDBCB /* MainViewController.xib */; };
+		FCA6B3B1ABB14A68949D052A /* libPods-iOSHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A427B1DA974B09A8D9085F /* libPods-iOSHelper.a */; };
 		FE2A4A2B197E9174002E784E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2A197E9174002E784E /* Foundation.framework */; };
 		FE2A4A2D197E9174002E784E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2C197E9174002E784E /* CoreGraphics.framework */; };
 		FE2A4A2F197E9174002E784E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2E197E9174002E784E /* UIKit.framework */; };
@@ -32,6 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E369F4D197F899C009EDBCB /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		1E369F4F197F8AC6009EDBCB /* NSObject+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Helper.h"; sourceTree = "<group>"; };
+		1E369F50197F8AC6009EDBCB /* NSObject+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Helper.m"; sourceTree = "<group>"; };
+		1E369F52197F999D009EDBCB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		1E369F53197F999D009EDBCB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		1E369F54197F999D009EDBCB /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		681AC8599C7E43E08FB2F35C /* Pods-iOSHelper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelper.xcconfig"; path = "Pods/Pods-iOSHelper.xcconfig"; sourceTree = "<group>"; };
+		C4A427B1DA974B09A8D9085F /* libPods-iOSHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A4A27197E9174002E784E /* iOSHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A4A2A197E9174002E784E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FE2A4A2C197E9174002E784E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +70,7 @@
 				FE2A4A2D197E9174002E784E /* CoreGraphics.framework in Frameworks */,
 				FE2A4A2F197E9174002E784E /* UIKit.framework in Frameworks */,
 				FE2A4A2B197E9174002E784E /* Foundation.framework in Frameworks */,
+				FCA6B3B1ABB14A68949D052A /* libPods-iOSHelper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E369F4C197F8980009EDBCB /* iOSHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1E369F4E197F8AA2009EDBCB /* category */,
+				1E369F4D197F899C009EDBCB /* Util.h */,
+			);
+			path = iOSHelper;
+			sourceTree = "<group>";
+		};
+		1E369F4E197F8AA2009EDBCB /* category */ = {
+			isa = PBXGroup;
+			children = (
+				1E369F4F197F8AC6009EDBCB /* NSObject+Helper.h */,
+				1E369F50197F8AC6009EDBCB /* NSObject+Helper.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
 		FE2A4A1E197E9174002E784E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +112,7 @@
 				FE2A4A49197E9174002E784E /* iOSHelperTests */,
 				FE2A4A29197E9174002E784E /* Frameworks */,
 				FE2A4A28197E9174002E784E /* Products */,
+				681AC8599C7E43E08FB2F35C /* Pods-iOSHelper.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +132,7 @@
 				FE2A4A2C197E9174002E784E /* CoreGraphics.framework */,
 				FE2A4A2E197E9174002E784E /* UIKit.framework */,
 				FE2A4A43197E9174002E784E /* XCTest.framework */,
+				C4A427B1DA974B09A8D9085F /* libPods-iOSHelper.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,8 +140,12 @@
 		FE2A4A30197E9174002E784E /* iOSHelper */ = {
 			isa = PBXGroup;
 			children = (
+				1E369F4C197F8980009EDBCB /* iOSHelper */,
 				FE2A4A39197E9174002E784E /* AppDelegate.h */,
 				FE2A4A3A197E9174002E784E /* AppDelegate.m */,
+				1E369F52197F999D009EDBCB /* MainViewController.h */,
+				1E369F53197F999D009EDBCB /* MainViewController.m */,
+				1E369F54197F999D009EDBCB /* MainViewController.xib */,
 				FE2A4A3C197E9174002E784E /* Images.xcassets */,
 				FE2A4A31197E9174002E784E /* Supporting Files */,
 			);
@@ -151,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE2A4A53197E9174002E784E /* Build configuration list for PBXNativeTarget "iOSHelper" */;
 			buildPhases = (
+				F1A15850989D4A87AB01780E /* Check Pods Manifest.lock */,
 				FE2A4A23197E9174002E784E /* Sources */,
 				FE2A4A24197E9174002E784E /* Frameworks */,
 				FE2A4A25197E9174002E784E /* Resources */,
+				B33877940F904C5AB224024C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2A4A35197E9174002E784E /* InfoPlist.strings in Resources */,
+				1E369F56197F999D009EDBCB /* MainViewController.xib in Resources */,
 				FE2A4A3D197E9174002E784E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,13 +274,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B33877940F904C5AB224024C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-iOSHelper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1A15850989D4A87AB01780E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FE2A4A23197E9174002E784E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E369F51197F8AC6009EDBCB /* NSObject+Helper.m in Sources */,
 				FE2A4A3B197E9174002E784E /* AppDelegate.m in Sources */,
 				FE2A4A37197E9174002E784E /* main.m in Sources */,
+				1E369F55197F999D009EDBCB /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +429,7 @@
 		};
 		FE2A4A54197E9174002E784E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 681AC8599C7E43E08FB2F35C /* Pods-iOSHelper.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -367,6 +443,7 @@
 		};
 		FE2A4A55197E9174002E784E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 681AC8599C7E43E08FB2F35C /* Pods-iOSHelper.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -437,6 +514,7 @@
 				FE2A4A55197E9174002E784E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE2A4A56197E9174002E784E /* Build configuration list for PBXNativeTarget "iOSHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +523,7 @@
 				FE2A4A58197E9174002E784E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

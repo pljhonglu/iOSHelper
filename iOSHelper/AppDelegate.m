@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSObject+Helper.h"
 
 @implementation AppDelegate
 
@@ -18,7 +19,11 @@
     [self.window makeKeyAndVisible];
     
     NSString *a = @"0.1333";
-    float b = [a floatValue];
+    
+    [NSObject runBlockOnMainThread:^{
+        NSLog(@"aaaaaaaaaaaaa");
+    }];
+    
     return YES;
 }
 
