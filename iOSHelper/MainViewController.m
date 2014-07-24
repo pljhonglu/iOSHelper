@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "UIView+Helper.h"
 
 @interface MainViewController ()
 
@@ -27,6 +28,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    NSLog(@"%f ,%f ,%f ,%f",self.view.x,self.view.y,self.view.width,self.view.height);
 }
 
 - (void)didReceiveMemoryWarning
