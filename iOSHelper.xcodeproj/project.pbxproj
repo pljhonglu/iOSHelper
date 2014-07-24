@@ -20,7 +20,6 @@
 		1E369F7F1980AE48009EDBCB /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F7E1980AE48009EDBCB /* NSDate+Helper.m */; };
 		1E369F9B1980BB60009EDBCB /* AHReach.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F821980BB60009EDBCB /* AHReach.m */; };
 		1E369F9C1980BB60009EDBCB /* ReyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F851980BB60009EDBCB /* ReyAnimation.m */; };
-		1E369F9D1980BB60009EDBCB /* CacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F881980BB60009EDBCB /* CacheHelper.m */; };
 		1E369F9E1980BB60009EDBCB /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F8B1980BB60009EDBCB /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E369F9F1980BB60009EDBCB /* Lunar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F8E1980BB60009EDBCB /* Lunar.m */; };
 		1E369FA01980BB60009EDBCB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F911980BB60009EDBCB /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -36,6 +35,9 @@
 		1E369FC11980E33C009EDBCB /* NSObject+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369FC01980E33C009EDBCB /* NSObject+Block.m */; };
 		1E369FC41980E363009EDBCB /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369FC31980E363009EDBCB /* NSObject+Runtime.m */; };
 		1E369FC71980F135009EDBCB /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369FC61980F135009EDBCB /* NSString+Regex.m */; };
+		1E369FCF1980FDF8009EDBCB /* TMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369FCA1980FDF7009EDBCB /* TMCache.m */; };
+		1E369FD01980FDF8009EDBCB /* TMDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369FCC1980FDF7009EDBCB /* TMDiskCache.m */; };
+		1E369FD11980FDF8009EDBCB /* TMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369FCE1980FDF7009EDBCB /* TMMemoryCache.m */; };
 		FCA6B3B1ABB14A68949D052A /* libPods-iOSHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A427B1DA974B09A8D9085F /* libPods-iOSHelper.a */; };
 		FE2A4A2B197E9174002E784E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2A197E9174002E784E /* Foundation.framework */; };
 		FE2A4A2D197E9174002E784E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2C197E9174002E784E /* CoreGraphics.framework */; };
@@ -89,8 +91,6 @@
 		1E369F821980BB60009EDBCB /* AHReach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHReach.m; sourceTree = "<group>"; };
 		1E369F841980BB60009EDBCB /* ReyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReyAnimation.h; sourceTree = "<group>"; };
 		1E369F851980BB60009EDBCB /* ReyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReyAnimation.m; sourceTree = "<group>"; };
-		1E369F871980BB60009EDBCB /* CacheHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheHelper.h; sourceTree = "<group>"; };
-		1E369F881980BB60009EDBCB /* CacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheHelper.m; sourceTree = "<group>"; };
 		1E369F8A1980BB60009EDBCB /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		1E369F8B1980BB60009EDBCB /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		1E369F8D1980BB60009EDBCB /* Lunar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lunar.h; sourceTree = "<group>"; };
@@ -121,6 +121,12 @@
 		1E369FC31980E363009EDBCB /* NSObject+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 		1E369FC51980F135009EDBCB /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		1E369FC61980F135009EDBCB /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
+		1E369FC91980FDF7009EDBCB /* TMCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCache.h; sourceTree = "<group>"; };
+		1E369FCA1980FDF7009EDBCB /* TMCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCache.m; sourceTree = "<group>"; };
+		1E369FCB1980FDF7009EDBCB /* TMDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDiskCache.h; sourceTree = "<group>"; };
+		1E369FCC1980FDF7009EDBCB /* TMDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDiskCache.m; sourceTree = "<group>"; };
+		1E369FCD1980FDF7009EDBCB /* TMMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMMemoryCache.h; sourceTree = "<group>"; };
+		1E369FCE1980FDF7009EDBCB /* TMMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMMemoryCache.m; sourceTree = "<group>"; };
 		681AC8599C7E43E08FB2F35C /* Pods-iOSHelper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelper.xcconfig"; path = "Pods/Pods-iOSHelper.xcconfig"; sourceTree = "<group>"; };
 		C4A427B1DA974B09A8D9085F /* libPods-iOSHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A4A27197E9174002E784E /* iOSHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,12 +175,12 @@
 		1E369F4C197F8980009EDBCB /* iOSHelper */ = {
 			isa = PBXGroup;
 			children = (
+				1E369FC81980FDF7009EDBCB /* TMCache */,
 				1E369FB51980E258009EDBCB /* CoreData */,
 				1E369FAE1980D978009EDBCB /* MD5 */,
 				1E369FA41980BDCA009EDBCB /* UIDevice */,
 				1E369F801980BB60009EDBCB /* AHReach */,
 				1E369F831980BB60009EDBCB /* Animation */,
-				1E369F861980BB60009EDBCB /* CacheHelper */,
 				1E369F891980BB60009EDBCB /* Keychain */,
 				1E369F8C1980BB60009EDBCB /* Lunar */,
 				1E369F8F1980BB60009EDBCB /* Reachability */,
@@ -247,15 +253,6 @@
 				1E369F851980BB60009EDBCB /* ReyAnimation.m */,
 			);
 			path = Animation;
-			sourceTree = "<group>";
-		};
-		1E369F861980BB60009EDBCB /* CacheHelper */ = {
-			isa = PBXGroup;
-			children = (
-				1E369F871980BB60009EDBCB /* CacheHelper.h */,
-				1E369F881980BB60009EDBCB /* CacheHelper.m */,
-			);
-			path = CacheHelper;
 			sourceTree = "<group>";
 		};
 		1E369F891980BB60009EDBCB /* Keychain */ = {
@@ -339,6 +336,19 @@
 				1E369FBD1980E26D009EDBCB /* NSManagedObject+Helper.m */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1E369FC81980FDF7009EDBCB /* TMCache */ = {
+			isa = PBXGroup;
+			children = (
+				1E369FC91980FDF7009EDBCB /* TMCache.h */,
+				1E369FCA1980FDF7009EDBCB /* TMCache.m */,
+				1E369FCB1980FDF7009EDBCB /* TMDiskCache.h */,
+				1E369FCC1980FDF7009EDBCB /* TMDiskCache.m */,
+				1E369FCD1980FDF7009EDBCB /* TMMemoryCache.h */,
+				1E369FCE1980FDF7009EDBCB /* TMMemoryCache.m */,
+			);
+			path = TMCache;
 			sourceTree = "<group>";
 		};
 		FE2A4A1E197E9174002E784E = {
@@ -555,10 +565,13 @@
 				1E369FB41980E170009EDBCB /* NSFileManager+Helper.m in Sources */,
 				1E369F6719809D3F009EDBCB /* UIButton+Helper.m in Sources */,
 				1E369F791980AC9C009EDBCB /* NSData+AES.m in Sources */,
+				1E369FD11980FDF8009EDBCB /* TMMemoryCache.m in Sources */,
 				1E369F6A19809DC1009EDBCB /* NSString+Helper.m in Sources */,
+				1E369FD01980FDF8009EDBCB /* TMDiskCache.m in Sources */,
 				FE2A4A3B197E9174002E784E /* AppDelegate.m in Sources */,
 				1E369F7C1980AD93009EDBCB /* NSData+DES.m in Sources */,
 				1E369F9F1980BB60009EDBCB /* Lunar.m in Sources */,
+				1E369FCF1980FDF8009EDBCB /* TMCache.m in Sources */,
 				1E369F9B1980BB60009EDBCB /* AHReach.m in Sources */,
 				1E369F9E1980BB60009EDBCB /* SFHFKeychainUtils.m in Sources */,
 				1E369F7F1980AE48009EDBCB /* NSDate+Helper.m in Sources */,
@@ -571,7 +584,6 @@
 				1E369F55197F999D009EDBCB /* MainViewController.m in Sources */,
 				1E369FAA1980D813009EDBCB /* NSDictionary+Helper.m in Sources */,
 				1E369FBA1980E258009EDBCB /* CoreDataManager.m in Sources */,
-				1E369F9D1980BB60009EDBCB /* CacheHelper.m in Sources */,
 				1E369F61198099CA009EDBCB /* UIColor+Helper.m in Sources */,
 				1E369FC71980F135009EDBCB /* NSString+Regex.m in Sources */,
 				1E369FC41980E363009EDBCB /* NSObject+Runtime.m in Sources */,
