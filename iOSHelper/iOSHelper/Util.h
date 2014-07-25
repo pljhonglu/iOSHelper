@@ -38,4 +38,6 @@
 #define RootNav  ((UINavigationController*)[UIApplication sharedApplication].keyWindow.rootViewController)
 #define PoptoRootVCWithAnimated(value) [RootNav popViewControllerAnimated:value]
 
+#define alert(msg) [[[UIAlertView alloc]initWithTitle:nil message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show]
+
 #endif

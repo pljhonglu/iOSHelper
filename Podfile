@@ -2,7 +2,7 @@
 # platform :ios, "6.0"
 
 target "iOSHelper" do
-pod 'AFNetworking'
+
 
 end
 

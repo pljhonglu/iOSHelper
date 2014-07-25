@@ -35,17 +35,45 @@
  */
 
 @interface UIView (Helper)
-- (float)x;
-- (float)y;
-- (float)width;
-- (float)height;
+@property (nonatomic, assign) CGSize size;
+@property (nonatomic, assign) CGPoint origin;
+@property (nonatomic, assign) CGFloat width;
+@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign) CGFloat x;
+@property (nonatomic, assign) CGFloat y;
 
 
 - (void)setTagName:(NSString*)name;
-
 - (UIView *)viewWithName:(NSString *)name;
+
 - (void) autoResize:(UIViewAutoresizing)mask;
-- (void)setPosition:(CGRect)position;
 
 - (void)removeAllSubviews;
+
+// Positioning
+- (void)setPosition:(CGRect)position;
+- (void)alignCenterToCenterOfSuperviewAnimated:(BOOL)animated;
+- (void)alignCenterHorizontalToSuperviewAnimated:(BOOL)animated;
+- (void)alignCenterVerticalToSuperviewAnimated:(BOOL)animated;
+- (void)alignCenterVerticalWithHeight:(CGFloat)height animated:(BOOL)animated;
+
+// Query
+/**
+ *  查找满足条件的view，满足条件的话在block里返回yes
+ *  前两个方法只遍历view的subview
+ *  后两个方法递归遍历subview
+ */
+- (UIView *)subviewWhichSatisfy:(BOOL (^) (UIView *))block;
+- (NSArray *)subviewsWhichSatisfy:(BOOL (^) (UIView *))block;
+- (UIView *)subviewOfAllSubviewsWhichSatisfy:(BOOL (^) (UIView *))block;
+- (NSArray *)subviewsOfAllSubviewsWhichSatisfy:(BOOL (^) (UIView *))block;
+
+// Animation
+- (void)animateRightBounce;
+- (void)animateLeftBounce;
+- (void)animateBottomBounce;
+- (void)animateTopBounce;
+
+- (void)fadeInWithDuration:(NSTimeInterval)duration;
+- (void)fadeOutWithDuration:(NSTimeInterval)duration;
 @end
