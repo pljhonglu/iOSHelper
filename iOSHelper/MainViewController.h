@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *aView;
+
+
+- (IBAction)pushViewController:(id)sender;
+- (IBAction)presentViewController:(id)sender;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "MainViewController.h"
-#import "UIView+Helper.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "iOSHelper/UIViewController/UIViewController+Helper.h"
+#import "iOSHelper/UIView/UIView+Helper.h"
 
 @interface MainViewController ()
 
@@ -29,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSLog(@"%f ,%f ,%f ,%f",self.view.x,self.view.y,self.view.width,self.view.height);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,4 +41,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pushViewController:(id)sender {
+//    FirstViewController *firstV = [[FirstViewController alloc]init];
+////    [self presentPopUpViewController:firstV];
+//    [self.navigationController pushViewController:firstV animated:YES];
+    
+
+    
+    
+    //    [_aView fadeOutWithDuration:1];
+    
+}
+
+- (IBAction)presentViewController:(id)sender {
+//    SecondViewController *secondV = [[SecondViewController alloc]init];
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:secondV];
+//    [self presentViewController:secondV];
+//    [self presentViewController:nav animated:YES completion:nil];
+    [_aView fadeInWithDuration:1];
+}
 @end

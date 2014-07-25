@@ -18,7 +18,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "CameraViewController.h"
-#import "Logging.h"
+//#import "Logging.h"
 
 // Rotations are clockwise
 typedef enum {
@@ -160,7 +160,7 @@ typedef enum {
   if (input) {
     [_captureSession addInput:input];
   } else {
-    LOG_ERROR(@"Failed retrieving capture device input: %@", error);
+    NSLog(@"Failed retrieving capture device input: %@", error);
   }
   
   _stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
@@ -185,7 +185,7 @@ typedef enum {
     }
   }
   if (_connection == nil) {
-    LOG_ERROR(@"Failed retrieving capture connection");
+    NSLog(@"Failed retrieving capture connection");
   }
   
   if (input && _connection) {
@@ -209,7 +209,7 @@ typedef enum {
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context {
   if (context == [CameraViewController class]) {
     _active = _captureSession.running;
-    LOG_VERBOSE(@"AVCaptureSession running state changed to %i", _active);
+    NSLog(@"AVCaptureSession running state changed to %i", _active);
   } else {
     [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
   }
@@ -256,7 +256,6 @@ typedef enum {
 }
 
 - (void) takePhoto {
-  DCHECK(_active);
   _takingPhoto += 1;
   
   EXIFOrientation orientation;
@@ -454,7 +453,6 @@ typedef enum {
         }
       } else {
         result = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-        DCHECK(result);
       }
     } else {
       result = error;

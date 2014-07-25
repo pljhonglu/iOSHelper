@@ -35,9 +35,8 @@
 
 @interface UIViewController (Helper)
 
-// A "Pop Up" is intended to only take up a portion of the screen, similar to a UIAlertView
 
-// Adds a "Pop Up" view to the current view controller
+// 渐变出现一个viewcontroller，可以用于启动欢迎页的效果
 - (void)presentPopUpViewController:(UIViewController<PopUpViewControllerDelegate>*)viewController;
 
 // Dismisses the "Pop Up" view

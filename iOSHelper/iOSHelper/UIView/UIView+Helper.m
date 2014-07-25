@@ -201,7 +201,7 @@
     animation.repeatCount = 1.0f;
     animation.autoreverses = YES;
     animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)];
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y + 3.0f)];
+    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y + 30.0f)];
     [self.layer addAnimation:animation forKey:@"position"];
 }
 
