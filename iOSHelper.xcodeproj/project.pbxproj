@@ -14,7 +14,6 @@
 		1E369F9C1980BB60009EDBCB /* ReyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F851980BB60009EDBCB /* ReyAnimation.m */; };
 		1E369F9E1980BB60009EDBCB /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F8B1980BB60009EDBCB /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E369F9F1980BB60009EDBCB /* Lunar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F8E1980BB60009EDBCB /* Lunar.m */; };
-		1E369FA01980BB60009EDBCB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F911980BB60009EDBCB /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E369FA11980BB60009EDBCB /* ResourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F941980BB60009EDBCB /* ResourceHelper.m */; };
 		1E369FA21980BB60009EDBCB /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F971980BB60009EDBCB /* Tools.m */; };
 		1E369FA31980BB60009EDBCB /* UITools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E369F9A1980BB60009EDBCB /* UITools.m */; };
@@ -50,6 +49,9 @@
 		1E6B4BB019823882007B851F /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1E6B4BAE19823882007B851F /* WebViewJavascriptBridge.js.txt */; };
 		1E6B4BB119823882007B851F /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B4BAF19823882007B851F /* WebViewJavascriptBridge.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FCA6B3B1ABB14A68949D052A /* libPods-iOSHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A427B1DA974B09A8D9085F /* libPods-iOSHelper.a */; };
+		FE14D74F19850C5200C1A107 /* CAKeyframeAnimation+AHEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = FE14D74C19850C5200C1A107 /* CAKeyframeAnimation+AHEasing.m */; };
+		FE14D75019850C5200C1A107 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = FE14D74D19850C5200C1A107 /* easing.c */; };
+		FE14D75619852BED00C1A107 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FE14D75519852BED00C1A107 /* Reachability.m */; };
 		FE2A4A2B197E9174002E784E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2A197E9174002E784E /* Foundation.framework */; };
 		FE2A4A2D197E9174002E784E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2C197E9174002E784E /* CoreGraphics.framework */; };
 		FE2A4A2F197E9174002E784E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2E197E9174002E784E /* UIKit.framework */; };
@@ -90,8 +92,6 @@
 		1E369F8B1980BB60009EDBCB /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		1E369F8D1980BB60009EDBCB /* Lunar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lunar.h; sourceTree = "<group>"; };
 		1E369F8E1980BB60009EDBCB /* Lunar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lunar.m; sourceTree = "<group>"; };
-		1E369F901980BB60009EDBCB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		1E369F911980BB60009EDBCB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		1E369F931980BB60009EDBCB /* ResourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceHelper.h; sourceTree = "<group>"; };
 		1E369F941980BB60009EDBCB /* ResourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceHelper.m; sourceTree = "<group>"; };
 		1E369F961980BB60009EDBCB /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
@@ -159,6 +159,13 @@
 		1E6B4BAF19823882007B851F /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		681AC8599C7E43E08FB2F35C /* Pods-iOSHelper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelper.xcconfig"; path = "Pods/Pods-iOSHelper.xcconfig"; sourceTree = "<group>"; };
 		C4A427B1DA974B09A8D9085F /* libPods-iOSHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE14D74B19850C5200C1A107 /* CAKeyframeAnimation+AHEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAKeyframeAnimation+AHEasing.h"; sourceTree = "<group>"; };
+		FE14D74C19850C5200C1A107 /* CAKeyframeAnimation+AHEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAKeyframeAnimation+AHEasing.m"; sourceTree = "<group>"; };
+		FE14D74D19850C5200C1A107 /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
+		FE14D74E19850C5200C1A107 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
+		FE14D75419852BED00C1A107 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		FE14D75519852BED00C1A107 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		FE14D7581985364E00C1A107 /* ARCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCHelper.h; sourceTree = "<group>"; };
 		FE2A4A27197E9174002E784E /* iOSHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A4A2A197E9174002E784E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FE2A4A2C197E9174002E784E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -205,6 +212,8 @@
 		1E369F4C197F8980009EDBCB /* iOSHelper */ = {
 			isa = PBXGroup;
 			children = (
+				FE14D7571985364E00C1A107 /* ARC */,
+				FE14D75319852BED00C1A107 /* Reachability */,
 				1E6B4BAC19823882007B851F /* WebViewJavascriptBridge */,
 				1E6B4B9219820CA6007B851F /* UIViewController */,
 				1E6B4B7F19820BBC007B851F /* others */,
@@ -220,7 +229,6 @@
 				1E369F831980BB60009EDBCB /* Animation */,
 				1E369F891980BB60009EDBCB /* Keychain */,
 				1E369F8C1980BB60009EDBCB /* Lunar */,
-				1E369F8F1980BB60009EDBCB /* Reachability */,
 				1E369F921980BB60009EDBCB /* ResourceHelper */,
 				1E369F951980BB60009EDBCB /* Tools */,
 				1E369F981980BB60009EDBCB /* UITools */,
@@ -252,6 +260,7 @@
 		1E369F831980BB60009EDBCB /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				FE14D74A19850C5200C1A107 /* AHEasing */,
 				1E369F841980BB60009EDBCB /* ReyAnimation.h */,
 				1E369F851980BB60009EDBCB /* ReyAnimation.m */,
 			);
@@ -274,15 +283,6 @@
 				1E369F8E1980BB60009EDBCB /* Lunar.m */,
 			);
 			path = Lunar;
-			sourceTree = "<group>";
-		};
-		1E369F8F1980BB60009EDBCB /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				1E369F901980BB60009EDBCB /* Reachability.h */,
-				1E369F911980BB60009EDBCB /* Reachability.m */,
-			);
-			path = Reachability;
 			sourceTree = "<group>";
 		};
 		1E369F921980BB60009EDBCB /* ResourceHelper */ = {
@@ -440,6 +440,34 @@
 				1E6B4BAF19823882007B851F /* WebViewJavascriptBridge.m */,
 			);
 			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		FE14D74A19850C5200C1A107 /* AHEasing */ = {
+			isa = PBXGroup;
+			children = (
+				FE14D74B19850C5200C1A107 /* CAKeyframeAnimation+AHEasing.h */,
+				FE14D74C19850C5200C1A107 /* CAKeyframeAnimation+AHEasing.m */,
+				FE14D74D19850C5200C1A107 /* easing.c */,
+				FE14D74E19850C5200C1A107 /* easing.h */,
+			);
+			path = AHEasing;
+			sourceTree = "<group>";
+		};
+		FE14D75319852BED00C1A107 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				FE14D75419852BED00C1A107 /* Reachability.h */,
+				FE14D75519852BED00C1A107 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		FE14D7571985364E00C1A107 /* ARC */ = {
+			isa = PBXGroup;
+			children = (
+				FE14D7581985364E00C1A107 /* ARCHelper.h */,
+			);
+			path = ARC;
 			sourceTree = "<group>";
 		};
 		FE2A4A1E197E9174002E784E = {
@@ -668,13 +696,16 @@
 				1E6B4B6E19820B35007B851F /* NSObject+Block.m in Sources */,
 				1E6B4B7C19820B9C007B851F /* UIButton+Helper.m in Sources */,
 				1E6B4BB119823882007B851F /* WebViewJavascriptBridge.m in Sources */,
+				FE14D75619852BED00C1A107 /* Reachability.m in Sources */,
 				1E369FD11980FDF8009EDBCB /* TMMemoryCache.m in Sources */,
+				FE14D74F19850C5200C1A107 /* CAKeyframeAnimation+AHEasing.m in Sources */,
 				1E369FD01980FDF8009EDBCB /* TMDiskCache.m in Sources */,
 				1E6B4B8D19820BBC007B851F /* NSData+DES.m in Sources */,
 				1E6B4B9119820BBC007B851F /* UIColor+Helper.m in Sources */,
 				1E6B4B9019820BBC007B851F /* NSFileManager+Helper.m in Sources */,
 				1E369FD51981EDF8009EDBCB /* NSString+URL.m in Sources */,
 				FE2A4A3B197E9174002E784E /* AppDelegate.m in Sources */,
+				FE14D75019850C5200C1A107 /* easing.c in Sources */,
 				1E6B4B6F19820B35007B851F /* NSObject+Runtime.mm in Sources */,
 				1E369F9F1980BB60009EDBCB /* Lunar.m in Sources */,
 				1E6B4B7419820B90007B851F /* NSString+Helper.m in Sources */,
@@ -683,7 +714,6 @@
 				1E369F9B1980BB60009EDBCB /* AHReach.m in Sources */,
 				1E369F9E1980BB60009EDBCB /* SFHFKeychainUtils.m in Sources */,
 				1E6B4BA2198229D4007B851F /* FirstViewController.m in Sources */,
-				1E369FA01980BB60009EDBCB /* Reachability.m in Sources */,
 				1E369FA11980BB60009EDBCB /* ResourceHelper.m in Sources */,
 				1E6B4B8F19820BBC007B851F /* NSDictionary+Helper.m in Sources */,
 				1E6B4BA7198229E4007B851F /* SecondViewController.m in Sources */,

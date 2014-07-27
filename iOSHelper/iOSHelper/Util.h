@@ -35,6 +35,9 @@
 // Y 的起始坐标，iOS7从状态栏下边开始
 #define SystermYStart (SystermVersion >= 7 ? 20 : 0)
 
+//快速创建 rgb 颜色 例如 UIColorFromRGB(0x067AB5)
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 #define RootNav  ((UINavigationController*)[UIApplication sharedApplication].keyWindow.rootViewController)
 #define PoptoRootVCWithAnimated(value) [RootNav popViewControllerAnimated:value]
 

@@ -69,11 +69,6 @@
 - (NSArray *)subviewsOfAllSubviewsWhichSatisfy:(BOOL (^) (UIView *))block;
 
 // Animation
-- (void)animateRightBounce;
-- (void)animateLeftBounce;
-- (void)animateBottomBounce;
-- (void)animateTopBounce;
-
 - (void)fadeInWithDuration:(NSTimeInterval)duration;
 - (void)fadeOutWithDuration:(NSTimeInterval)duration;
 @end

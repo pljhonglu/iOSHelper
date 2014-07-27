@@ -32,7 +32,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,11 +45,7 @@
 ////    [self presentPopUpViewController:firstV];
 //    [self.navigationController pushViewController:firstV animated:YES];
     
-
-    
-    
     //    [_aView fadeOutWithDuration:1];
-    
 }
 
 - (IBAction)presentViewController:(id)sender {
@@ -58,6 +53,6 @@
 //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:secondV];
 //    [self presentViewController:secondV];
 //    [self presentViewController:nav animated:YES completion:nil];
-    [_aView fadeInWithDuration:1];
+//    [_aView animateLeftBounce];
 }
 @end

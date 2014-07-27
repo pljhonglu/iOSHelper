@@ -125,9 +125,10 @@
 
 
 - (void)removeAllSubviews{
-    for (UIView *subview in self.subviews) {
-        [subview removeFromSuperview];
-    }
+//    for (UIView *subview in self.subviews) {
+//        [subview removeFromSuperview];
+//    }
+    [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 #pragma mark - Query
@@ -164,47 +165,6 @@
 }
 
 #pragma mark - Animation
-
-- (void)animateRightBounce {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.duration = 0.1f;
-    animation.repeatCount = 1.0f;
-    animation.autoreverses = YES;
-    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)];
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x - 3.0f, self.center.y)];
-    [self.layer addAnimation:animation forKey:@"position"];
-}
-
-- (void)animateLeftBounce {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.duration = 0.1f;
-    animation.repeatCount = 1.0f;
-    animation.autoreverses = YES;
-    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)];
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x + 3.0f, self.center.y)];
-    [self.layer addAnimation:animation forKey:@"position"];
-}
-
-- (void)animateBottomBounce {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.duration = 0.1f;
-    animation.repeatCount = 1.0f;
-    animation.autoreverses = YES;
-    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)];
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y - 3.0f)];
-    [self.layer addAnimation:animation forKey:@"position"];
-}
-
-- (void)animateTopBounce {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.duration = 0.1f;
-    animation.repeatCount = 1.0f;
-    animation.autoreverses = YES;
-    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)];
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y + 30.0f)];
-    [self.layer addAnimation:animation forKey:@"position"];
-}
-
 - (void)fadeInWithDuration:(NSTimeInterval)duration {
     [UIView animateWithDuration:duration animations:^{ self.alpha = 1.0f; }];
 }
@@ -212,4 +172,5 @@
 - (void)fadeOutWithDuration:(NSTimeInterval)duration {
     [UIView animateWithDuration:duration animations:^{ self.alpha = 0.0f; }];
 }
+
 @end
