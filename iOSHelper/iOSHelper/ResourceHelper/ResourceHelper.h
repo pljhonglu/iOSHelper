@@ -7,12 +7,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface ResourceHelper : NSObject {
+@interface ResourceHelper : NSObject
 
-}
++ (NSString *)path_Home;
++ (NSString *)path_Documents;
++ (NSString *)path_Library;
++ (NSString *)path_Tmp;
++ (NSString *)path_Cache;
 
-+(UIImage *) loadImageByTheme:(NSString *) name;
-+(UIImage *) loadImage:(NSString *) name;
++ (NSString *)pathWithName:(NSString *)fileName;
 
 +(NSObject *) getUserDefaults:(NSString *) name;
 +(void) setUserDefaults:(NSObject *) defaults forKey:(NSString *) key;

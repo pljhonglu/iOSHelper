@@ -10,6 +10,7 @@
 
 @interface UIImage (Helper)
 //创建纯色的图片
++ (UIImage *)imageWithColor:(UIColor *)color;
 + (UIImage *)imageWithColor:(UIColor *)color Size:(CGSize)size;
 
 //imageNamed的非缓存版
@@ -27,7 +28,16 @@
 
 // 获取当前屏幕截图
 +(UIImage*)screenShot;
-
+/**
+ Create and return a new UIColor object from the pixel pointed in this image.
+ 
+ @param point The point in this image.
+ The range of point.x and point.y is [0,image.width-1].
+ If the point is out of this image, it will return nil.
+ 
+ @return The UIColor object, or nil when error occured.
+ */
+- (UIColor *)colorAtPoint:(CGPoint )point;
 // 设置图片大小
 - (UIImage*)scaleToSize:(CGSize)size;
 

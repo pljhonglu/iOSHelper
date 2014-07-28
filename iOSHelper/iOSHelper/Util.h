@@ -43,4 +43,25 @@
 
 #define alert(msg) [[[UIAlertView alloc]initWithTitle:nil message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show]
 
+
+static inline BOOL IsEmpty(id thing) {
+    return thing == nil || [thing isEqual:[NSNull null]]
+    || ([thing respondsToSelector:@selector(length)]
+        && [(NSData *)thing length] == 0)
+    || ([thing respondsToSelector:@selector(count)]
+        && [(NSArray *)thing count] == 0);
+}
+
+static inline NSString *StringFromObject(id object) {
+	if (object == nil || [object isEqual:[NSNull null]]) {
+		return @"";
+	} else if ([object isKindOfClass:[NSString class]]) {
+		return object;
+	} else if ([object respondsToSelector:@selector(stringValue)]){
+		return [object stringValue];
+	} else {
+		return [object description];
+	}
+}
+
 #endif

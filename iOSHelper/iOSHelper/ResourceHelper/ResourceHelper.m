@@ -8,23 +8,25 @@
 
 @implementation ResourceHelper
 
-+(UIImage *) loadImageByTheme:(NSString *) name{
-	NSString *path = [[NSBundle mainBundle] pathForResource:[((NSString *)[ResourceHelper  getUserDefaults:@"theme"]) stringByAppendingFormat:@"_%@",name] ofType:@"png"];
-	return [[UIImage alloc] initWithContentsOfFile:path];
-	
++ (NSString *)path_Home{
+    return NSHomeDirectory();
+}
++ (NSString *)path_Documents{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [paths objectAtIndex:0];
+}
++ (NSString *)path_Library{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    return [paths objectAtIndex:0];
+}
++ (NSString *)path_Tmp{
+    return NSTemporaryDirectory();
+}
++ (NSString *)path_Cache{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    return [paths objectAtIndex:0];
 }
 
-+(UIImage *) loadImage:(NSString *) name{
-    NSString *realName;
-    if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad){
-        realName = [[NSString alloc] initWithFormat:@"pad_%@",name];
-    }else{
-        realName = [[NSString alloc] initWithFormat:@"phone_%@",name];
-    }
-	NSString *path = [[NSBundle mainBundle] pathForResource:realName ofType:@"png"];
-    
-	return [[UIImage alloc] initWithContentsOfFile:path];
-}
 
 +(NSObject *) getUserDefaults:(NSString *) name{
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -36,5 +38,18 @@
     [userDefaults setObject:defaults forKey:key];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+//+ (BOOL)archiveObject:(id<NSCoding>)obj key:(NSString *)key{
+//    NSMutableData *data = [[NSMutableData alloc] init];
+//    
+//    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+//    
+//    [archiver encodeObject:obj forKey:key];
+//    
+//    [archiver finishEncoding];
+//    
+//    [data writeToFile:[self getFilePath] atomically:YES];
+//}
+
 
 @end

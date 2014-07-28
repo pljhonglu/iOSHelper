@@ -99,4 +99,10 @@
     return result;
     
 }
+
+- (NSRange) rangeOfFirstSubstringMatching:(NSString*)regex {
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regex options:0 error:nil];
+    return [regularExpression rangeOfFirstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
+}
+
 @end

@@ -35,6 +35,8 @@
 - (BOOL)matchesWithRegex:(NSString *)regex;
 //正则提取
 - (NSString *)substringWithRegex:(NSString *)regex;
+//提取匹配的字符串位置
+- (NSRange) rangeOfFirstSubstringMatching:(NSString*)regex;
 //正则提取为数租
 - (NSArray *)matchesInRegex:(NSString *)regex error:(NSError **)error;
 // 正则替换

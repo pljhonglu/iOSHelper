@@ -8,29 +8,23 @@
 
 #import "NSString+Helper.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "NSNumber+Helper.h"
 
 @implementation NSString (Helper)
--(NSString *) trimHead{
-    NSInteger i;
-    NSCharacterSet *cs = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    for(i = 0; i < [self length]; i++){
-        if ( ![cs characterIsMember: [self characterAtIndex: i]] ) break;
-    }
-    return [self substringFromIndex: i];
+- (NSString *)stringByTrim {
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    return [self stringByTrimmingCharactersInSet:set];
 }
 
--(NSString *) trimTail{
-    NSInteger i;
-    NSCharacterSet *cs = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    for(i = [self length] -1; i >= 0; i--)
-    {
-        if ( ![cs characterIsMember: [self characterAtIndex: i]] ) break;
+- (BOOL)isNotBlank{
+    NSCharacterSet *blank = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    for (NSInteger i = 0; i < self.length; ++i) {
+        unichar c = [self characterAtIndex:i];
+        if (![blank characterIsMember:c]) {
+            return YES;
+        }
     }
-    return [self substringToIndex: (i+1)];
-}
-
-- (NSString *) trimBoth{
-    return [[self trimHead] trimTail];
+    return NO;
 }
 
 - (BOOL)equals:(NSString *)str{
@@ -45,28 +39,30 @@
                               context:nil].size.height;
 }
 
-+ (NSString *)urlEncodingString:(NSString *)origion{
-    NSString *encoded = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                                              (CFStringRef)origion,
+- (NSString *)stringByURLEncode{
+    NSString *encoded = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes( NULL,
+                                                                                              (__bridge CFStringRef)self,
                                                                                               NULL,
-                                                                                              (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                              kCFStringEncodingUTF8));
+                                                                                              CFSTR("!#$&'()*+,/:;=?@[]"),
+                                                                                              kCFStringEncodingUTF8);
     return encoded;
 }
-
-+ (NSString *)urlDecodingString:(NSString *)encoded{
-    NSMutableString *resultString = [NSMutableString stringWithString:encoded];
-    [resultString replaceOccurrencesOfString:@"+"
-                                  withString:@" "
-                                     options:NSLiteralSearch
-                                       range:NSMakeRange(0, [resultString length])];
-    return [resultString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+- (NSString *)stringByURLDecode{
+    CFStringEncoding en = CFStringConvertNSStringEncodingToEncoding(kCFStringEncodingUTF8);
+    NSString *decoded = [self stringByReplacingOccurrencesOfString:@"+"
+                                                        withString:@" "];
+    decoded = (__bridge_transfer NSString *)
+    CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                            (__bridge CFStringRef)decoded,
+                                                            CFSTR(""),
+                                                            en);
+    return decoded;
 }
 
-+(NSInteger)TextLength:(NSString *)text{
+- (NSInteger)TextLength{
     float number = 0.0;
-    for (int index = 0; index < [text length]; index++){
-        NSString *character = [text substringWithRange:NSMakeRange(index, 1)];
+    for (int index = 0; index < [self length]; index++){
+        NSString *character = [self substringWithRange:NSMakeRange(index, 1)];
         
         if ([character lengthOfBytesUsingEncoding:NSUTF8StringEncoding] == 3){
             number++;
@@ -76,4 +72,14 @@
     }
     return ceil(number);
 }
+
+- (NSNumber*)numberValue{
+    return [NSNumber numberWithString:self];
+}
+
+
+- (NSData *)dataValue{
+    return [self dataUsingEncoding:NSUTF8StringEncoding];
+}
+
 @end

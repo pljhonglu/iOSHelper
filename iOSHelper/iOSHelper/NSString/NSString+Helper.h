@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Helper)
-//去除头部空格
--(NSString *) trimHead;
-//去除尾部空格
--(NSString *) trimTail;
-//去除首尾空格
-- (NSString *) trimBoth;
+/**
+ Trim blank (space and newline).
+ 
+ @return the trimmed string.
+ */
+- (NSString *) stringByTrim;
+
+// nil, @"", @"  ", @"\n" will return NO, others will return YES.
+- (BOOL) isNotBlank;
 
 - (BOOL)equals:(NSString *)str;
 
@@ -25,20 +28,19 @@
  @param origion 输入字符串
  @returns 经过utf-8编码的字符串
  */
-+ (NSString *)urlEncodingString:(NSString *)origion;
-
+- (NSString *)stringByURLEncode;
 
 /**
  utf-8解码
  @param encoded 输入字符串
  @returns 经过utf-8解码的字符串
  */
-+ (NSString *)urlDecodingString:(NSString *)encoded;
+- (NSString *)stringByURLDecode;
 
 /**
  计算中英文混编字符串长度
  @param text 输入字符串
  @returns 返回字符串长度
  */
-+ (NSInteger)TextLength:(NSString *)text;
+- (NSInteger)TextLength;
 @end

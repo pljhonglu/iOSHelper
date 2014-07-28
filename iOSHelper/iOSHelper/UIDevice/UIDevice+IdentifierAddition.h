@@ -10,31 +10,50 @@
 
 
 @interface UIDevice (IdentifierAddition)
-
-/*
- * @method uniqueDeviceIdentifier
- * @description use this method when you need a unique identifier in one app.
- * It generates a hash from the MAC-address in combination with the bundle identifier
- * of your app.
+/**
+ Returns if the device has retina display.
  */
+- (BOOL) isRetina;
 
-- (NSString *) uniqueDeviceIdentifier;
-
-/*
- * @method uniqueGlobalDeviceIdentifier
- * @description use this method when you need a unique global identifier to track a device
- * with multiple apps. as example a advertising network will use this method to track the device
- * from different apps.
- * It generates a hash from the MAC-address only.
+/**
+ Returns if the device is iPad/iPad Mini.
  */
-
-- (NSString *) uniqueGlobalDeviceIdentifier;
-
-/** return a double type number in MB size for the device available memory */
-+(double)availableMemory;
+- (BOOL) isPad;
 
 
+/**
+ Returns `YES` if the device is a simulator.
+ */
+- (BOOL) isSimulator;
 
+/**
+ Returns `YES` when this device is jailbroken.
+ */
+- (BOOL) isJailbreake;
+
+
+- (BOOL)isOS4;
+- (BOOL)isOS5;
+- (BOOL)isOS6;
+- (BOOL)isOS7;
+
+/**
+ Return the MAC address of this device.
+ e.g. AA:BB:CC:DD:EE:FF
+ */
+@property (nonatomic,strong, readonly) NSString *macAddress;
+
+/**
+ Return the current IP address of this device.
+ e.g. 192.168.1.1
+ */
+@property (nonatomic,strong, readonly) NSString *ipAddress;
+
+/**
+ Return avaliable device memory in Byte.
+ Return -1 when error occured.
+ */
+@property (nonatomic, readonly) int64_t availableMemory;
 
 /**
  系统名称，如iPhone OS
@@ -42,51 +61,22 @@
  */
 +(NSString *)SystemName;
 
-
 /**
  系统版本，如4.2.1
  @returns 系统版本
  */
 +(NSString *)SystemVersion;
 
-
-/**
- The model of the device，如iPhone或者iPod touch
- @returns The model of the device
- */
-+(NSString *)DeviceModel;
-
-
-/**
- 设备的惟一标识号，deviceID
- (由于Apple公司对UDID保密性的要求,不推荐使用该方法，建议使用 UniqueIdentifier_Soft)
- @returns 设备的惟一标识号
- */
-+(NSString *)UniqueIdentifier_Hard;
-
-
-/**
- 设备的惟一标识号，deviceID
- @returns 设备的惟一标识号,获取的是mac地址,不推荐使用
- */
-+(NSString *)UniqueIdentifier_Soft;
-
-/**
- 获取设备的UUID
- @returns 设备的UUID
- */
-+(NSString *)DeviceUUID;
-
 /**
  设备的名称，如 张三的iPhone
  @returns 设备的名称
  */
 +(NSString *)DeviceName;
-
 /**
- The model of the device as a localized string，类似model
- @returns The model of the device as a localized string
+ *  设备UUID
+ *
+ *  @return 
  */
-+(NSString *)LocalizedModel;
++ (NSString *)DeviceUUID;
 
 @end
