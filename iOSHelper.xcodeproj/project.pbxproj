@@ -27,7 +27,6 @@
 		FE14D7BA1986828700C1A107 /* Lunar.m in Sources */ = {isa = PBXBuildFile; fileRef = FE14D7901986828700C1A107 /* Lunar.m */; };
 		FE14D7BB1986828700C1A107 /* ResourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FE14D7921986828700C1A107 /* ResourceHelper.m */; };
 		FE14D7BC1986828700C1A107 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE14D7941986828700C1A107 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FE14D7BD1986828700C1A107 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = FE14D7971986828700C1A107 /* readme.md */; };
 		FE14D7BE1986828700C1A107 /* UIAlertView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = FE14D79A1986828700C1A107 /* UIAlertView+Helper.m */; };
 		FE14D7BF1986828700C1A107 /* UIButton+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = FE14D79C1986828700C1A107 /* UIButton+Helper.m */; };
 		FE14D7C01986828700C1A107 /* UIControl+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = FE14D79E1986828700C1A107 /* UIControl+Helper.m */; };
@@ -102,7 +101,6 @@
 		FE14D7941986828700C1A107 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		FE14D7951986828700C1A107 /* iOSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSHelper.h; sourceTree = "<group>"; };
 		FE14D7961986828700C1A107 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
-		FE14D7971986828700C1A107 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
 		FE14D7991986828700C1A107 /* UIAlertView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Helper.h"; sourceTree = "<group>"; };
 		FE14D79A1986828700C1A107 /* UIAlertView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Helper.m"; sourceTree = "<group>"; };
 		FE14D79B1986828700C1A107 /* UIButton+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Helper.h"; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 				FE14D76F1986828700C1A107 /* Foundation */,
 				FE14D7951986828700C1A107 /* iOSHelper.h */,
 				FE14D7961986828700C1A107 /* Macro.h */,
-				FE14D7971986828700C1A107 /* readme.md */,
 				FE2A4A39197E9174002E784E /* AppDelegate.h */,
 				FE2A4A3A197E9174002E784E /* AppDelegate.m */,
 				FE2A4A3C197E9174002E784E /* Images.xcassets */,
@@ -398,7 +395,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2A4A35197E9174002E784E /* InfoPlist.strings in Resources */,
-				FE14D7BD1986828700C1A107 /* readme.md in Resources */,
 				FE2A4A3D197E9174002E784E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
