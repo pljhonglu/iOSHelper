@@ -12,8 +12,6 @@
 		1E42220C1987922E00223B1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E4221FF1987922E00223B1F /* InfoPlist.strings */; };
 		1E42220D1987922E00223B1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4222011987922E00223B1F /* Images.xcassets */; };
 		1E42220F1987922E00223B1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4222041987922E00223B1F /* main.m */; };
-		1E4222101987922E00223B1F /* aaa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E4222061987922E00223B1F /* aaa.jpg */; };
-		1E4222111987922E00223B1F /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E4222071987922E00223B1F /* default.jpg */; };
 		1E4222121987922E00223B1F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4222091987922E00223B1F /* MainViewController.m */; };
 		1E4222131987922E00223B1F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E42220A1987922E00223B1F /* MainViewController.xib */; };
 		1E422251198792E300223B1F /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422217198792E300223B1F /* CoreDataManager.m */; };
@@ -75,8 +73,6 @@
 		1E4222021987922E00223B1F /* iOSHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iOSHelper-Info.plist"; sourceTree = "<group>"; };
 		1E4222031987922E00223B1F /* iOSHelper-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iOSHelper-Prefix.pch"; sourceTree = "<group>"; };
 		1E4222041987922E00223B1F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1E4222061987922E00223B1F /* aaa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aaa.jpg; sourceTree = "<group>"; };
-		1E4222071987922E00223B1F /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		1E4222081987922E00223B1F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		1E4222091987922E00223B1F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		1E42220A1987922E00223B1F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -193,8 +189,6 @@
 		1E4222051987922E00223B1F /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1E4222061987922E00223B1F /* aaa.jpg */,
-				1E4222071987922E00223B1F /* default.jpg */,
 				1E4222081987922E00223B1F /* MainViewController.h */,
 				1E4222091987922E00223B1F /* MainViewController.m */,
 				1E42220A1987922E00223B1F /* MainViewController.xib */,
@@ -440,10 +434,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E4222131987922E00223B1F /* MainViewController.xib in Resources */,
-				1E4222101987922E00223B1F /* aaa.jpg in Resources */,
 				1E42220C1987922E00223B1F /* InfoPlist.strings in Resources */,
 				1E42220D1987922E00223B1F /* Images.xcassets in Resources */,
-				1E4222111987922E00223B1F /* default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -601,7 +593,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -17,10 +17,10 @@ Pod::Spec.new do |s|
 
   s.name         = "iOSHelper"
   s.version      = "0.0.1"
-  s.summary      = "collect some helpers for ios development"
+  s.summary      = "iOS 开发的辅助类，帮助快速开发"
 
   s.description  = <<-DESC
-                   A longer description of iOSHelper in Markdown format.
+                   主要包括对 Foundation 和 UIKit 的扩展和一些开发辅助类,在项目的.pch文件中引入iOSHelper.h即可.
 
                    * Think: Why did you write this? What is the focus? What does it do?
                    * CocoaPods will be using this to generate tags, and improve search results.
@@ -39,8 +39,8 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "LICENSE" }
+  # s.license      = "MIT (example)"
+  s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "6.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -115,10 +115,10 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "libz.dylib"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  # s.framework  = "SomeFramework"
+  s.frameworks = "Foundation", "CoreGraphics", "UIKit"
 
-  # s.library   = "iconv"
+  s.library   = "libz"
   # s.libraries = "iconv", "xml2"
 
 
