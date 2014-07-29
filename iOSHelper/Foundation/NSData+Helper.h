@@ -9,149 +9,53 @@
 #import <Foundation/Foundation.h>
 
 @interface NSData (Helper)
+
+- (NSString *)stringValue;
 ///=============================================================================
-/// @name Hash
+/// @name Hash (返回NSString均为小写)
 ///=============================================================================
 
-/**
- Return a lowercase NSString for md2 hash.
- */
 - (NSString *)md2String;
-
-/**
- Return an NSData for md2 hash.
- */
 - (NSData *)md2Data;
 
-/**
- Return a lowercase NSString for md4 hash.
- */
 - (NSString *)md4String;
-
-/**
- Return an NSData for md4 hash.
- */
 - (NSData *)md4Data;
 
-/**
- Return a lowercase NSString for md5 hash.
- */
 - (NSString *)md5String;
-
-/**
- Return an NSData for md5 hash.
- */
 - (NSData *)md5Data;
 
-/**
- Return a lowercase NSString for sha1 hash.
- */
 - (NSString *)sha1String;
-
-/**
- Return an NSData for sha1 hash.
- */
 - (NSData *)sha1Data;
 
-/**
- Return a lowercase NSString for sha224 hash.
- */
 - (NSString *)sha224String;
-
-/**
- Return an NSData for sha224 hash.
- */
 - (NSData *)sha224Data;
 
-/**
- Return a lowercase NSString for sha256 hash.
- */
 - (NSString *)sha256String;
-
-/**
- Return an NSData for sha256 hash.
- */
 - (NSData *)sha256Data;
 
-/**
- Return a lowercase NSString for sha384 hash.
- */
 - (NSString *)sha384String;
-
-/**
- Return an NSData for sha384 hash.
- */
 - (NSData *)sha384Data;
 
-/**
- Return a lowercase NSString for sha512 hash.
- */
 - (NSString *)sha512String;
-
-/**
- Return an NSData for sha512 hash.
- */
 - (NSData *)sha512Data;
 
-/**
- Return a lowercase NSString for hmac using algorithm md5 with key.
- 
- @param key The hmac key.
- */
+
 - (NSString *)hmacMD5StringWithKey:(NSString *)key;
-
-/**
- Return a lowercase NSString for hmac using algorithm sha1 with key.
- 
- @param key The hmac key.
- */
 - (NSString *)hmacSHA1StringWithKey:(NSString *)key;
-
-/**
- Return a lowercase NSString for hmac using algorithm sha224 with key.
- 
- @param key The hmac key.
- */
 - (NSString *)hmacSHA224StringWithKey:(NSString *)key;
-
-/**
- Return a lowercase NSString for hmac using algorithm sha256 with key.
- 
- @param key The hmac key.
- */
 - (NSString *)hmacSHA256StringWithKey:(NSString *)key;
-
-/**
- Return a lowercase NSString for hmac using algorithm sha384 with key.
- 
- @param key The hmac key.
- */
 - (NSString *)hmacSHA384StringWithKey:(NSString *)key;
-
-/**
- Return a lowercase NSString for hmac using algorithm sha512 with key.
- 
- @param key The hmac key.
- */
 - (NSString *)hmacSHA512StringWithKey:(NSString *)key;
 
-/**
- Return a lowercase NSString for crc32 hash.
- */
 - (NSString *)crc32String;
-
-/**
- Return crc32 hash.
- */
 - (uint32_t)crc32;
 
 ///=============================================================================
-/// @name Encrypt and Decrypt
+/// @name 加密/解密
 ///=============================================================================
 
-
 /**
- Return an encrypted NSData using AES.
+ AES加密
  
  @param key A key length of 16, 24 or 32 (128, 192 or 256bits).
  @param iv An initialization vector length of 16(128bits).
@@ -161,7 +65,7 @@
 - (NSData *)AES256EncryptWithKey:(NSData *)key iv:(NSData *)iv;
 
 /**
- Return an decrypted NSData using AES.
+ AES解密
  
  @param key A key length of 16, 24 or 32 (128, 192 or 256bits).
  @param iv An initialization vector length of 16(128bits).
@@ -171,43 +75,44 @@
 - (NSData *)AES256DecryptWithKey:(NSData *)key iv:(NSData *)iv;
 
 ///=============================================================================
-/// @name Encode and decode
+/// @name 编码/解码
+/// 相对而言，十六进制编码速度快、编码后的体积大 / base64编码速度慢、编码后体积小
 ///=============================================================================
 
-
 /**
- Return a uppercase NSString for HEX.
+ *  十六进制编码
+ *
+ *  @return 返回编码后的字符串
  */
 - (NSString *)hexString;
-
 /**
- Return an NSData from hex string.
- @param hexString The hex string which is case insensitive.
- @return a new NSData, or nil when error occured.
+ *  十六进制解码
+ *
+ *  @param hexString 十六进制编码形式的字符串，不区分大小写
+ *
+ *  @return 解码后的NSData
  */
 + (NSData *)dataWithHexString:(NSString *)hexString;
 
 /**
- Return an NSString for base64 encoded.
- 
- @warning This method has been implemented in iOS7.
+ *  把NSData使用 base64 编码
+ *
+ *  @return 返回 base64 编码后的字符串
  */
 - (NSString *)base64Encoding;
-
 /**
- Return an NSData from base64 encoded string.
- 
- @warning This method has been implemented in iOS7.
- 
- @param base64Encoding The encoded string.
+ *  把使用base64编码的字符串解码成NSData
+ *
+ *  @param base64Encoding 使用base64编码的字符串
+ *
+ *  @return 解码后得到的NSdata
  */
 + (NSData *)dataWithBase64Encoding:(NSString *)base64Encoding;
 
 
 ///=============================================================================
-/// @name Inflate and deflate
+/// @name 压缩/解压缩
 ///=============================================================================
-
 
 /**
  Decompress data from gzip data.
@@ -222,7 +127,6 @@
  @return Deflated data.
  */
 - (NSData *)gzipDeflate;
-
 
 /**
  Decompress data from zlib-compressed data.

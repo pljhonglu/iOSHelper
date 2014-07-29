@@ -192,5 +192,17 @@ userInfo:[NSDictionary dictionaryWithObject:errStr forKey:NSLocalizedDescription
 	return [GetClass((id)self) swizzleMethod:origSel_ withMethod:altSel_ error:error_];
 }
 
++ (void)appendMethod:(SEL)newMethod fromClass:(Class)aClass{
+    if(![self class]) return;
+	if(!aClass) return;
+	Method bMethod = class_getInstanceMethod(aClass, newMethod);
+	class_addMethod([self class], method_getName(bMethod), method_getImplementation(bMethod), method_getTypeEncoding(bMethod));
+}
 
++ (void)replaceMethod:(SEL)aMethod fromClass:(Class)aClass{
+    if(![self class]) return;
+	if(!aClass) return;
+	Method bMethod = class_getInstanceMethod(aClass, aMethod);
+	class_replaceMethod([self class], method_getName(bMethod), method_getImplementation(bMethod), method_getTypeEncoding(bMethod));
+}
 @end

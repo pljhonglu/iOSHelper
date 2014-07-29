@@ -168,48 +168,21 @@ void HSL2HSB(CGFloat h, CGFloat s, CGFloat l,
 
 
 /**
- Returns the components that make up the color in the HSL color space.
- 
- @param hue On return, the hue component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @param saturation On return, the saturation component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @param lightness On return, the lightness component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @param alpha On return, the alpha component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @return YES if the color could be converted, NO otherwise.
+ *  颜色转换为HSL
+ *
+ *  @param hue        转换后 hue 通道的值
+ *  @param saturation 转换后 saturation 通道的值
+ *  @param lightness  转换后 lightness 通道的值
+ *  @param alpha      转换后 alpha 通道的值
+ *
+ *  @return 如果可以转换成HSL则返回yes
  */
 - (BOOL)getHue:(CGFloat *)hue
     saturation:(CGFloat *)saturation
      lightness:(CGFloat *)lightness
          alpha:(CGFloat *)alpha;
 
-
-/**
- Returns the components that make up the color in the CMYK color space.
- 
- @param cyan On return, the cyan component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @param magenta On return, the magenta component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @param yellow On return, the yellow component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @param black On return, the black component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @param alpha On return, the alpha component of the color object,
- specified as a value between 0.0 and 1.0.
- 
- @return YES if the color could be converted, NO otherwise.
- */
+// 颜色转换为CMYK
 - (BOOL)getCyan:(CGFloat *)cyan
         magenta:(CGFloat *)magenta
          yellow:(CGFloat *)yellow

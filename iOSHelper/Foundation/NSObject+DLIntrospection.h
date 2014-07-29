@@ -19,6 +19,5 @@
 + (NSArray *)protocols;
 + (NSDictionary *)descriptionForProtocol:(Protocol *)proto;
 
-
 + (NSString *)parentClassHierarchy;
 @end

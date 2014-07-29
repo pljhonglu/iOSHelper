@@ -9,6 +9,58 @@
 #import "NSDate+Helper.h"
 
 @implementation NSDate (Helper)
+- (NSInteger)year {
+    return [[[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:self] year];
+}
+
+- (NSInteger)month {
+    return [[[NSCalendar currentCalendar] components:NSMonthCalendarUnit fromDate:self] month];
+}
+
+- (NSInteger)day {
+    return [[[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:self] day];
+}
+
+- (NSInteger)hour {
+    return [[[NSCalendar currentCalendar] components:NSHourCalendarUnit fromDate:self] hour];
+}
+
+- (NSInteger)minute {
+    return [[[NSCalendar currentCalendar] components:NSMinuteCalendarUnit fromDate:self] minute];
+}
+
+- (NSInteger)second {
+    return [[[NSCalendar currentCalendar] components:NSSecondCalendarUnit fromDate:self] second];
+}
+
+- (NSInteger)week {
+    return [[[NSCalendar currentCalendar] components:NSWeekCalendarUnit fromDate:self] week];
+}
+
+- (NSInteger)weekday {
+    return [[[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:self] weekday];
+}
+
+- (NSInteger)weekdayOrdinal {
+    return [[[NSCalendar currentCalendar] components:NSWeekdayOrdinalCalendarUnit fromDate:self] weekdayOrdinal];
+}
+
+- (NSInteger)weekOfMonth {
+    return [[[NSCalendar currentCalendar] components:NSWeekOfMonthCalendarUnit fromDate:self] weekOfMonth];
+}
+
+- (NSInteger)weekOfYear {
+    return [[[NSCalendar currentCalendar] components:NSWeekOfYearCalendarUnit fromDate:self] weekOfYear];
+}
+
+- (NSInteger)yearForWeekOfYear {
+    return [[[NSCalendar currentCalendar] components:NSYearForWeekOfYearCalendarUnit fromDate:self] yearForWeekOfYear];
+}
+
+- (NSInteger)quarter {
+    return [[[NSCalendar currentCalendar] components:NSQuarterCalendarUnit fromDate:self] quarter];
+}
+
 /*
  * This guy can be a little unreliable and produce unexpected results,
  * you're better off using daysAgoAgainstMidnight
@@ -51,11 +103,7 @@
 	return text;
 }
 
-- (NSUInteger)weekday {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *weekdayComponents = [calendar components:(NSWeekdayCalendarUnit) fromDate:self];
-	return [weekdayComponents weekday];
-}
+
 
 + (NSDate *)dateFromString:(NSString *)string {
 	return [NSDate dateFromString:string withFormat:[NSDate dbFormatString]];
@@ -66,14 +114,6 @@
 	[inputFormatter setDateFormat:format];
 	NSDate *date = [inputFormatter dateFromString:string];
 	return date;
-}
-
-+ (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format {
-	return [date stringWithFormat:format];
-}
-
-+ (NSString *)stringFromDate:(NSDate *)date {
-	return [date string];
 }
 
 + (NSString *)stringForDisplayFromDate:(NSDate *)date prefixed:(BOOL)prefixed alwaysDisplayTime:(BOOL)displayTime {
@@ -265,21 +305,11 @@
 //获取年月日如:19871127.
 - (NSString *)getFormatYearMonthDay
 {
-	NSString *string = [NSString stringWithFormat:@"%d%02d%02d",[self getYear],[self getMonth],[self getDay]];
+	NSString *string = [NSString stringWithFormat:@"%d%02d%02d",self.year,self.month,self.day];
 	return string;
 }
 
-//该日期是该年的第几周
-- (int )getWeekOfYear
-{
-	int i;
-	int year = [self getYear];
-	NSDate *date = [self endOfWeek];
-	for (i = 1;[[date dateAfterDay:-7 * i] getYear] == year;i++)
-	{
-	}
-	return i;
-}
+
 //返回day天后的日期(若day为负数,则为|day|天前的日期)
 - (NSDate *)dateAfterDay:(int)day
 {
@@ -303,61 +333,11 @@
 	
 	return dateAfterMonth;
 }
-//获取日
-- (NSUInteger)getDay{
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSDateComponents *dayComponents = [calendar components:(NSDayCalendarUnit) fromDate:self];
-	return [dayComponents day];
-}
-//获取月
-- (NSUInteger)getMonth
-{
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSDateComponents *dayComponents = [calendar components:(NSMonthCalendarUnit) fromDate:self];
-	return [dayComponents month];
-}
-//获取年
-- (NSUInteger)getYear
-{
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSDateComponents *dayComponents = [calendar components:(NSYearCalendarUnit) fromDate:self];
-	return [dayComponents year];
-}
-//获取小时
-- (int )getHour {
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSUInteger unitFlags =NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit |NSHourCalendarUnit|NSMinuteCalendarUnit;
-	NSDateComponents *components = [calendar components:unitFlags fromDate:self];
-	NSInteger hour = [components hour];
-	return (int)hour;
-}
-//获取分钟
-- (int)getMinute {
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSUInteger unitFlags =NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit |NSHourCalendarUnit|NSMinuteCalendarUnit;
-	NSDateComponents *components = [calendar components:unitFlags fromDate:self];
-	NSInteger minute = [components minute];
-	return (int)minute;
-}
-- (int)getHour:(NSDate *)date {
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSUInteger unitFlags =NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit |NSHourCalendarUnit|NSMinuteCalendarUnit;
-	NSDateComponents *components = [calendar components:unitFlags fromDate:date];
-	NSInteger hour = [components hour];
-	return (int)hour;
-}
-- (int)getMinute:(NSDate *)date {
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSUInteger unitFlags =NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit |NSHourCalendarUnit|NSMinuteCalendarUnit;
-	NSDateComponents *components = [calendar components:unitFlags fromDate:date];
-	NSInteger minute = [components minute];
-	return (int)minute;
-}
 
 //返回该月的第一天
 - (NSDate *)beginningOfMonth
 {
-	return [self dateAfterDay:-[self getDay] + 1];
+	return [self dateAfterDay:-self.day + 1];
 }
 //该月的最后一天
 - (NSDate *)endOfMonth

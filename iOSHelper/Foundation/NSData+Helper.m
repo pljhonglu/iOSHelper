@@ -11,6 +11,9 @@
 #include <zlib.h>
 
 @implementation NSData (Helper)
+- (NSString *)stringValue{
+    return [[NSString alloc]initWithData:self encoding:NSUTF8StringEncoding];
+}
 
 #pragma mark - md
 - (NSString *)md2String {

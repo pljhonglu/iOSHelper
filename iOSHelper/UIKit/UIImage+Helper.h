@@ -9,25 +9,26 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Helper)
+
 //创建纯色的图片
 + (UIImage *)imageWithColor:(UIColor *)color;
 + (UIImage *)imageWithColor:(UIColor *)color Size:(CGSize)size;
 
 //imageNamed的非缓存版
 + (UIImage *)imageName:(NSString *)name;
-
-//复制当前图片
-- (UIImage *)duplicate;
-
-//使当前图片可拉伸
-- (UIImage *)stretched;
-
-//使当前图片抗锯齿(当图片在旋转时有用, 原理就是在图片周围加1px的透明像素)
-- (UIImage *)antiAlias;
-
 // 获取当前屏幕截图
 +(UIImage*)screenShot;
 
+
+
+//复制当前图片
+- (UIImage *)duplicate;
+//使当前图片可拉伸
+- (UIImage *)stretched;
+//使当前图片抗锯齿(当图片在旋转时有用, 原理就是在图片周围加1px的透明像素)
+- (UIImage *)antiAlias;
+//测试图片是否有 alpha 通道
+- (BOOL)hasAlphaChannel;
 /**
  *  指定像素的颜色值
  *
@@ -36,10 +37,12 @@
  *  @return 该像素的颜色值
  */
 - (UIColor *)colorAtPoint:(CGPoint )point;
-//测试图片是否有 alpha 通道
-- (BOOL)hasAlphaChannel;
 
-// 设置图片大小
+///=============================================================================
+/// @name 图片缩放/剪裁
+///=============================================================================
+
+// 设置图片大小，可以用于缩小图片起到图片压缩的作用，减少图片的内存占用
 - (UIImage*)scaleToSize:(CGSize)size;
 
 /*
@@ -74,14 +77,9 @@
  */
 - (UIImage*)scaleToSize:(CGSize)size withOffset:(CGPoint)offset;
 
-/**
- * Draws the image using content mode rules.
- */
+// 绘制图片
 - (void)drawInRect:(CGRect)rect contentMode:(UIViewContentMode)contentMode;
-
-/**
- * Draws the image as a rounded rectangle.
- */
+// 圆角矩形
 - (void)drawInRect:(CGRect)rect radius:(CGFloat)radius;
 - (void)drawInRect:(CGRect)rect radius:(CGFloat)radius contentMode:(UIViewContentMode)contentMode;
 

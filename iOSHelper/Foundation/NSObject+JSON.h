@@ -10,11 +10,7 @@
 
 @interface NSString (JSON)
 
-/**
- *  Creates an object from a JSON string, and returns it.
- *
- *  @return An NSArray or an NSDictionary built form the JSON string.
- */
+// 返回 NSArray 或者 NSDictionary
 - (id) objectFromJSONString;
 
 @end
@@ -22,23 +18,12 @@
 
 @interface NSArray (JSON)
 
-/**
- *  Creates a string of the JSON representation of the array.
- *
- *  @return An NSString containing the JSON representation of the array.
- */
 - (NSString *)JSONString;
 
 @end
 
 
 @interface NSDictionary (JSON)
-
-/**
- *  Creates a string of the JSON representation of the dictionary.
- *
- *  @return An NSString containing the JSON representation of the dictionary.
- */
 
 - (NSString *)JSONString;
 

@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (Helper)
+
 // 自动pop或者dismiss当前viewController
 - (void)dismissThisViewController;
-
-
 
 @end

@@ -15,6 +15,10 @@
 + (NSString *)path_Tmp;
 + (NSString *)path_Cache;
 
+////////////////////////////////////////////////////////////////
+/// UserDefaults
+////////////////////////////////////////////////////////////////
+
 +(NSObject *) getUserDefaults:(NSString *) name;
 +(void) setUserDefaults:(NSObject *) defaults forKey:(NSString *) key;
 

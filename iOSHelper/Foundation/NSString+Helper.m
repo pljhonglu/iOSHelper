@@ -39,26 +39,6 @@
                               context:nil].size.height;
 }
 
-- (NSString *)stringByURLEncode{
-    NSString *encoded = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes( NULL,
-                                                                                              (__bridge CFStringRef)self,
-                                                                                              NULL,
-                                                                                              CFSTR("!#$&'()*+,/:;=?@[]"),
-                                                                                              kCFStringEncodingUTF8);
-    return encoded;
-}
-- (NSString *)stringByURLDecode{
-    CFStringEncoding en = CFStringConvertNSStringEncodingToEncoding(kCFStringEncodingUTF8);
-    NSString *decoded = [self stringByReplacingOccurrencesOfString:@"+"
-                                                        withString:@" "];
-    decoded = (__bridge_transfer NSString *)
-    CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
-                                                            (__bridge CFStringRef)decoded,
-                                                            CFSTR(""),
-                                                            en);
-    return decoded;
-}
-
 - (NSInteger)TextLength{
     float number = 0.0;
     for (int index = 0; index < [self length]; index++){
@@ -76,7 +56,6 @@
 - (NSNumber*)numberValue{
     return [NSNumber numberWithString:self];
 }
-
 
 - (NSData *)dataValue{
     return [self dataUsingEncoding:NSUTF8StringEncoding];

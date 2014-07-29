@@ -9,50 +9,24 @@
 #import <UIKit/UIKit.h>
 
 @interface UIDevice (Helper)
-/**
- Returns if the device has retina display.
- */
+
+// e.g. AA:BB:CC:DD:EE:FF
+@property (nonatomic,strong, readonly) NSString *macAddress;
+// e.g. 192.168.1.1
+@property (nonatomic,strong, readonly) NSString *ipAddress;
+// 系统可用内存，Byte，错误返回 -1
+@property (nonatomic, readonly) int64_t availableMemory;
+
 - (BOOL) isRetina;
-
-/**
- Returns if the device is iPad/iPad Mini.
- */
 - (BOOL) isPad;
-
-
-/**
- Returns `YES` if the device is a simulator.
- */
 - (BOOL) isSimulator;
-
-/**
- Returns `YES` when this device is jailbroken.
- */
+// 检测越狱
 - (BOOL) isJailbreake;
-
 
 - (BOOL)isOS4;
 - (BOOL)isOS5;
 - (BOOL)isOS6;
 - (BOOL)isOS7;
-
-/**
- Return the MAC address of this device.
- e.g. AA:BB:CC:DD:EE:FF
- */
-@property (nonatomic,strong, readonly) NSString *macAddress;
-
-/**
- Return the current IP address of this device.
- e.g. 192.168.1.1
- */
-@property (nonatomic,strong, readonly) NSString *ipAddress;
-
-/**
- Return avaliable device memory in Byte.
- Return -1 when error occured.
- */
-@property (nonatomic, readonly) int64_t availableMemory;
 
 /**
  系统名称，如iPhone OS
@@ -72,11 +46,9 @@
  */
 +(NSString *)DeviceName;
 /**
- *  设备UUID
- *
- *  @return
+ 设备UUID
+ @return such as 9E9E0A02-A916-4406-964D-0FBCDA6B0216
  */
 + (NSString *)DeviceUUID;
-
 
 @end

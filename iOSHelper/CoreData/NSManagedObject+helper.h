@@ -8,6 +8,7 @@
 
 #import <CoreData/CoreData.h>
 #import "CoreDataManager.h"
+
 typedef void(^ListResult)(NSArray* result, NSError *error);
 typedef void(^ObjectResult)(id result, NSError *error);
 typedef id(^AsyncProcess)(NSManagedObjectContext *ctx, NSString *className);

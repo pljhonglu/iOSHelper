@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Helper)
-/**
- Trim blank (space and newline).
- 
- @return the trimmed string.
- */
+- (NSNumber*)numberValue;
+- (NSData *)dataValue;
+
+// 去除首尾的空格和换行符
 - (NSString *) stringByTrim;
 
 // nil, @"", @"  ", @"\n" will return NO, others will return YES.
@@ -24,21 +23,7 @@
 - (CGFloat)heightByFont:(UIFont *)font width:(CGFloat)width;
 
 /**
- utf-8编码转换
- @param origion 输入字符串
- @returns 经过utf-8编码的字符串
- */
-- (NSString *)stringByURLEncode;
-
-/**
- utf-8解码
- @param encoded 输入字符串
- @returns 经过utf-8解码的字符串
- */
-- (NSString *)stringByURLDecode;
-
-/**
- 计算中英文混编字符串长度
+ 计算中英文混编字符串长度，单位长度包含一个中文字符或者两个英文字符
  @param text 输入字符串
  @returns 返回字符串长度
  */
