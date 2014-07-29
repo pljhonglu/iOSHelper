@@ -8,8 +8,8 @@
 #ifndef iOSHelper_iOSHelper_h
 #define iOSHelper_iOSHelper_h
 
-#ifndef __IPHONE_5_0
-#error YYKit only support iOS 5.0 and later
+#ifndef __IPHONE_6_0
+#error iOSHelper only support iOS 6.0 and later
 #endif
 
 #import "Macro.h"

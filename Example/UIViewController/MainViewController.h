@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
-- (IBAction)action01:(id)sender;
-- (IBAction)action02:(id)sender;
-- (IBAction)action03:(id)sender;
-- (IBAction)action04:(id)sender;
-- (IBAction)action05:(id)sender;
-- (IBAction)action06:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
