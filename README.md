@@ -15,7 +15,7 @@ iOS 开发的辅助类，帮助快速开发
 #### cocospod
 
 ```
-pod 'iOSHelper', :git => 'https://github.com/pljhonglu/iOSHelper.git', :tag => 'v0.1.0'
+pod 'iOSHelper', :git => 'https://github.com/pljhonglu/iOSHelper.git', :tag => 'v0.0.1'
 ```
 
 
