@@ -31,10 +31,8 @@
 		1E42225D198792E300223B1F /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422230198792E300223B1F /* NSString+Regex.m */; };
 		1E42225E198792E300223B1F /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422232198792E300223B1F /* NSString+URL.m */; };
 		1E42225F198792E300223B1F /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422234198792E300223B1F /* UIColor+Helper.m */; };
-		1E422260198792E300223B1F /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422237198792E300223B1F /* CameraViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E422261198792E300223B1F /* Lunar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422239198792E300223B1F /* Lunar.m */; };
 		1E422262198792E300223B1F /* ResourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42223B198792E300223B1F /* ResourceHelper.m */; };
-		1E422263198792E300223B1F /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42223D198792E300223B1F /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E422264198792E300223B1F /* UIAlertView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422242198792E300223B1F /* UIAlertView+Helper.m */; };
 		1E422265198792E300223B1F /* UIButton+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422244198792E300223B1F /* UIButton+Helper.m */; };
 		1E422266198792E300223B1F /* UIControl+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422246198792E300223B1F /* UIControl+Helper.m */; };
@@ -47,6 +45,7 @@
 		1E422271198799EA00223B1F /* CookiesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E422270198799EA00223B1F /* CookiesHelper.m */; };
 		1E42227619879C0C00223B1F /* UIScrollView+DeliveryAllEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42227319879C0C00223B1F /* UIScrollView+DeliveryAllEvents.m */; };
 		1E42227719879C0C00223B1F /* UIScrollView+DeliveryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42227519879C0C00223B1F /* UIScrollView+DeliveryEvent.m */; };
+		1E42227A1987A16F00223B1F /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4222791987A16F00223B1F /* SFHFKeychainUtils.m */; };
 		FE2A4A2B197E9174002E784E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2A197E9174002E784E /* Foundation.framework */; };
 		FE2A4A2D197E9174002E784E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2C197E9174002E784E /* CoreGraphics.framework */; };
 		FE2A4A2F197E9174002E784E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4A2E197E9174002E784E /* UIKit.framework */; };
@@ -111,14 +110,10 @@
 		1E422232198792E300223B1F /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		1E422233198792E300223B1F /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
 		1E422234198792E300223B1F /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
-		1E422236198792E300223B1F /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		1E422237198792E300223B1F /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		1E422238198792E300223B1F /* Lunar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lunar.h; sourceTree = "<group>"; };
 		1E422239198792E300223B1F /* Lunar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lunar.m; sourceTree = "<group>"; };
 		1E42223A198792E300223B1F /* ResourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceHelper.h; sourceTree = "<group>"; };
 		1E42223B198792E300223B1F /* ResourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceHelper.m; sourceTree = "<group>"; };
-		1E42223C198792E300223B1F /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		1E42223D198792E300223B1F /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		1E42223E198792E300223B1F /* iOSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSHelper.h; sourceTree = "<group>"; };
 		1E42223F198792E300223B1F /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		1E422241198792E300223B1F /* UIAlertView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Helper.h"; sourceTree = "<group>"; };
@@ -145,6 +140,8 @@
 		1E42227319879C0C00223B1F /* UIScrollView+DeliveryAllEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DeliveryAllEvents.m"; sourceTree = "<group>"; };
 		1E42227419879C0C00223B1F /* UIScrollView+DeliveryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DeliveryEvent.h"; sourceTree = "<group>"; };
 		1E42227519879C0C00223B1F /* UIScrollView+DeliveryEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DeliveryEvent.m"; sourceTree = "<group>"; };
+		1E4222781987A16F00223B1F /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		1E4222791987A16F00223B1F /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		FE2A4A27197E9174002E784E /* iOSHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A4A2A197E9174002E784E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FE2A4A2C197E9174002E784E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -263,16 +260,14 @@
 		1E422235198792E300223B1F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1E4222781987A16F00223B1F /* SFHFKeychainUtils.h */,
+				1E4222791987A16F00223B1F /* SFHFKeychainUtils.m */,
 				1E42226F198799EA00223B1F /* CookiesHelper.h */,
 				1E422270198799EA00223B1F /* CookiesHelper.m */,
-				1E422236198792E300223B1F /* CameraViewController.h */,
-				1E422237198792E300223B1F /* CameraViewController.m */,
 				1E422238198792E300223B1F /* Lunar.h */,
 				1E422239198792E300223B1F /* Lunar.m */,
 				1E42223A198792E300223B1F /* ResourceHelper.h */,
 				1E42223B198792E300223B1F /* ResourceHelper.m */,
-				1E42223C198792E300223B1F /* SFHFKeychainUtils.h */,
-				1E42223D198792E300223B1F /* SFHFKeychainUtils.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -470,8 +465,6 @@
 				1E42227619879C0C00223B1F /* UIScrollView+DeliveryAllEvents.m in Sources */,
 				1E422258198792E300223B1F /* NSNumber+Helper.m in Sources */,
 				1E422265198792E300223B1F /* UIButton+Helper.m in Sources */,
-				1E422260198792E300223B1F /* CameraViewController.m in Sources */,
-				1E422263198792E300223B1F /* SFHFKeychainUtils.m in Sources */,
 				1E42220F1987922E00223B1F /* main.m in Sources */,
 				1E42225B198792E300223B1F /* NSObject+Runtime.m in Sources */,
 				1E422261198792E300223B1F /* Lunar.m in Sources */,
@@ -492,6 +485,7 @@
 				1E422256198792E300223B1F /* NSDictionary+Helper.m in Sources */,
 				1E42225F198792E300223B1F /* UIColor+Helper.m in Sources */,
 				1E422271198799EA00223B1F /* CookiesHelper.m in Sources */,
+				1E42227A1987A16F00223B1F /* SFHFKeychainUtils.m in Sources */,
 				1E42225E198792E300223B1F /* NSString+URL.m in Sources */,
 				1E42227719879C0C00223B1F /* UIScrollView+DeliveryEvent.m in Sources */,
 				1E422254198792E300223B1F /* NSData+Helper.m in Sources */,
