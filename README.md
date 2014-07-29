@@ -4,9 +4,22 @@ iOSHelper
 
 iOS 开发的辅助类，帮助快速开发
 
-### 使用说明
+### 使用说明 
 
-在项目的`.pch`文件中引入`#import "iOSHelper.h"`
+#### 直接引入
+
+在项目的`.pch`文件中`#import "iOSHelper.h"`
+
+依赖：`Foundation.framework`, `CoreGraphics.framework`, `UIKit.framework`, `libz.dylib`
+
+#### cocospod
+
+```
+pod 'iOSHelper', :git => 'https://github.com/pljhonglu/iOSHelper.git', :tag => 'v0.1.0'
+```
+
+
+> 注意：iOSHelper.h 里面引入的类可根据自己的使用情况来修改，用不到的话没有必要全部引入
 
 ### category说明
 
@@ -51,5 +64,4 @@ device扩展中有获取设备ID的相关方法，需注意，UDID相关方法�
 
 ### 待完善...
 
-* 加入 cocospod 支持
 * 在 NSObject 中加入 block 相关方法
