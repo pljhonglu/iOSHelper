@@ -12,18 +12,20 @@
 #error iOSHelper only support iOS 6.0 and later
 #endif
 
+// 注释掉的内容请根据需要手动添加
 
 #import "Macro.h"
 
 // Core Data
-#import "CoreDataManager.h"
-#import "NSManagedObject+helper.h"
+//#import "CoreDataManager.h"
+//#import "NSManagedObject+helper.h"
 
 // helper
-#import "Lunar.h"
-#import "CookiesHelper.h"
+// 在类内单独添加，最好不要全局引入
+//#import "Lunar.h"
+//#import "CookiesHelper.h"
 #import "ResourceHelper.h"
-#import "SFHFKeychainUtils.h"
+//#import "SFHFKeychainUtils.h"
 
 // UIKit
 #import "UIImage+ImageEffects.h"
@@ -47,9 +49,9 @@
 #import "NSDictionary+Helper.h"
 #import "NSNotificationCenter+Helper.h"
 #import "NSNumber+Helper.h"
-#import "NSObject+DLIntrospection.h"
+//#import "NSObject+DLIntrospection.h"
 #import "NSObject+JSON.h"
-#import "NSObject+Runtime.h"
+//#import "NSObject+Runtime.h"
 #import "NSString+Helper.h"
 #import "NSString+Regex.h"
 #import "NSString+URL.h"
