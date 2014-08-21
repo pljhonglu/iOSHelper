@@ -18,7 +18,6 @@ iOS 开发的辅助类，帮助快速开发
 pod 'iOSHelper', :git => 'https://github.com/pljhonglu/iOSHelper.git', :tag => 'v0.0.1'
 ```
 
-
 > 注意：iOSHelper.h 里面引入的类可根据自己的使用情况来修改，用不到的话没有必要全部引入
 
 ### category说明
@@ -44,23 +43,6 @@ device扩展中有获取设备ID的相关方法，需注意，UDID相关方法�
 > 这其中大部分代码都是从网络上摘的，本人只是起到了板砖的作用，少部分是个人开发中的总结。由于时间较长，代码的具体出处我也不是很清楚了，如果您知道的话麻烦告诉我，我会在这里加上
 
 * [SFHFKeychainUtils](https://github.com/kamiro/SFHFKeychainUtils)
-
-### 其他常用三方库
-
-* [Reachability](https://github.com/tonymillion/Reachability): 苹果官方的网络状态库，网上看到说用这个库实时获取网络状态会影响性能
-* [AHReach](https://github.com/warrenm/AHReach): 实时动态检测网络，对于有这样需求的APP使用这个库应该比reachability性能要好些
-* [TMCache](https://github.com/tumblr/TMCache): tumble的开源项目
-* [AHEasing](https://github.com/warrenm/AHEasing): 路径动画，包含弹性路径
-* [GTMBase64](https://code.google.com/p/google-toolbox-for-mac/source/browse/trunk/Foundation/?r=87): 谷歌code上的开源项目，用于base64编码/解码
-* [AFNetWorking](https://github.com/AFNetworking/AFNetworking): 网络库
-* [FMDB](https://github.com/ccgus/fmdb): sqlite的库，包含线程安全的一些方法
-* [WebViewJavascriptBridge](https://github.com/marcuswestin/WebViewJavascriptBridge): webview与JavaScript的中间件
-* [ObjectiveRecord](https://github.com/supermarin/ObjectiveRecord): 这个coredata的库亮点在于有一个map的映射关系，方便接口json中的数据直接映射成model。缺点在于非线程安全。代码相对简单，可以把这个与上面的库整合一下
-* [MagicalRecord](https://github.com/magicalpanda/MagicalRecord): 这个应该是最好的coredata库了，github排名也很高
-* [SFHFKeychainUtils](https://github.com/kamiro/SFHFKeychainUtils): 一个钥匙串的三方库，此处已经集成
-* [ARCHelper](https://gist.github.com/nicklockwood/1563325): 一个适配ARC和MRC的宏定义的库
-
-> 更多类库详见: [Github-iOS备忘](http://github.ibireme.com/github/list/ios/)
 
 ### 待完善...
 
