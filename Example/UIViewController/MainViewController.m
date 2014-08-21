@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "iOSHelper.h"
+#import "Person.h"
 
 @interface MainViewController ()
 
@@ -28,18 +29,35 @@
 {
     [super viewDidLoad];
     
-    NSDate *date = [NSDate dateFromString:@"2013-07-28 23:23:22" withFormat:@"yyyy-MM-dd HH:mm:ss"];
-    DLog(@"beginning of day : %@",[[date beginningOfDay] string]);
-    DLog(@"string: %@",[date string]);
+    NSDictionary *JSON = @{
+                           @"id":@2,
+                           @"first_name": @"Marin",
+                           @"last_name": @"Usalj",
+                           @"age": @25,
+                           @"is_member": @"true",
+                           @"cars": @[
+                                   @{ @"hp": @220, @"make": @"Trabant" },
+                                   @{ @"hp": @90, @"make": @"Volkswagen" }
+                                   ],
+                           @"manager": @{
+                                   @"firstName": @"Delisa",
+                                   @"lastName": @"Mason",
+                                   @"age": @25,
+                                   @"isMember": @NO
+                                   },
+                           @"employees": @[
+                                   @{ @"first_name": @"Luca" },
+                                   @{ @"first_name": @"Tony" },
+                                   @{ @"first_name": @"Jim" }
+                                   ]
+                           };
+    Person *person = [Person createWithDictionary:JSON];
     
-    NSString *string = @"独奏: http://jhonglu.duapp.com";
+    NSDictionary *dict = nil;
     
-    NSString *encode = [[string dataValue] base64Encoding];
-    DLog(@"%@",encode);
-    
-    NSData *data = [NSData dataWithBase64Encoding:encode];
-    DLog(@"%@",[data stringValue]);
+    NSLog(@"%@",dict[@"a"]);
 
+//    [Person mappings];
 }
 
 - (void)didReceiveMemoryWarning
