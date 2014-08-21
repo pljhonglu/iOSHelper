@@ -33,7 +33,7 @@ NSString * const propertyName = @"key";
     
     ObjectModel *model = [[ObjectModel alloc]init];
     NSDictionary *transformed = [[self class] transformProperties:dict];
-    NSError *error = nil;
+//    NSError *error = nil;
 //    BOOL value = [self validateValue:@"QQQQ" forKey:@"ZZZ" error:&error];
     DLog(@"%@",transformed);
     return model;
@@ -88,12 +88,12 @@ NSString * const propertyName = @"key";
 }
 
 - (void)setPropertiesWithDictionary:(NSDictionary *)dict{
-    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        if (!obj[className]) {
-            SEL selector = NSSelectorFromString(key);
-            objc_property_t list = class_copyPropertyList([self class], NULL);
-        
-        }
-    }];
+//    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//        if (!obj[className]) {
+//            SEL selector = NSSelectorFromString(key);
+//            objc_property_t list = class_copyPropertyList([self class], NULL);
+//        
+//        }
+//    }];
 }
 @end

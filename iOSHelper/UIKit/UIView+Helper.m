@@ -58,6 +58,45 @@
 - (void)setY:(CGFloat)y {
 	self.frame = CGRectMake(self.frame.origin.x, y, self.frame.size.width, self.frame.size.height);
 }
+
+-(CGFloat)top{
+    return self.frame.origin.y;
+}
+
+-(void)setTop:(CGFloat)top{
+    CGRect r = self.frame;
+    [self setFrame:CGRectMake(r.origin.x, top, r.size.width, r.size.height)];
+}
+
+-(CGFloat)bottom{
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+-(void)setBottom:(CGFloat)bottom{
+    CGRect r = self.frame;
+    [self setFrame:CGRectMake(r.origin.x, bottom-r.size.height, r.size.width, r.size.height)];
+}
+
+-(CGFloat)left{
+    return self.frame.origin.x;
+}
+
+- (void)setLeft:(CGFloat)left
+{
+    CGRect r = self.frame;
+    [self setFrame:CGRectMake(left,r.origin.y, r.size.width, r.size.height)];
+}
+
+-(CGFloat)right{
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+-(void)setRight:(CGFloat)right
+{
+    CGRect r = self.frame;
+    [self setFrame:CGRectMake(right-r.size.width,r.origin.y, r.size.width, r.size.height)];
+}
+
 - (UIViewController *)viewController {
     for (UIView *view = [self superview]; view; view = view.superview) {
         UIResponder *nextResponder = [view nextResponder];

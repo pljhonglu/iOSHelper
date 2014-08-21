@@ -21,6 +21,7 @@
 - (BOOL)equals:(NSString *)str;
 
 - (CGFloat)heightByFont:(UIFont *)font width:(CGFloat)width;
+- (CGSize)sizeByFont:(UIFont *)font width:(CGFloat)width;
 
 /**
  计算中英文混编字符串长度，单位长度包含一个中文字符或者两个英文字符

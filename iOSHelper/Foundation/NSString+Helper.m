@@ -38,6 +38,13 @@
                            attributes:attributes
                               context:nil].size.height;
 }
+- (CGSize)sizeByFont:(UIFont *)font width:(CGFloat)width{
+    NSDictionary *attributes = @{NSFontAttributeName:font};
+    return [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
+                              options:NSStringDrawingUsesLineFragmentOrigin
+                           attributes:attributes
+                              context:nil].size;
+}
 
 - (NSInteger)TextLength{
     float number = 0.0;

@@ -9,12 +9,13 @@
 #import "NSObject+Mappings.h"
 #import "NSString+ObjectiveSugar.h"
 
-NSString * const className = @"class";
-NSString * const jsonData = @"data";
-NSString * const propertyName = @"key";
+//NSString * const className = @"class";
+//NSString * const jsonData = @"data";
+//NSString * const propertyName = @"key";
 
 @implementation NSObject (Mappings)
 
+/*
 + (instancetype)createWithDictionary:(NSDictionary *)attributes{
     
     NSObject *model = [[self class] new];
@@ -42,7 +43,7 @@ NSString * const propertyName = @"key";
     return nil;
 }
 
-
+*/
 
 #pragma mark - private
 /**
@@ -53,6 +54,7 @@ NSString * const propertyName = @"key";
  *  }
  *
  */
+/*
 + (NSDictionary *)transformProperties:(NSDictionary *)properties{
 
     
@@ -77,14 +79,15 @@ NSString * const propertyName = @"key";
     
     return transformed;
 }
-
+*/
 - (void)setPropertiesWithDictionary:(NSDictionary *)dict{
-    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        if (!obj[className]) {
-            SEL selector = NSSelectorFromString(key);
-            objc_property_t list = class_copyPropertyList([self class], NULL);
-            
-        }
-    }];
+//    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//        if (!obj[className]) {
+//            SEL selector = NSSelectorFromString(key);
+//            objc_property_t list = class_copyPropertyList([self class], NULL);
+//            
+//        }
+//    }];
 }
+
 @end
