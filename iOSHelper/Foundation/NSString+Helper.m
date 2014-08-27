@@ -34,7 +34,7 @@
 - (CGFloat)heightByFont:(UIFont *)font width:(CGFloat)width{
     NSDictionary *attributes = @{NSFontAttributeName:font};
     return [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
-                              options:NSStringDrawingTruncatesLastVisibleLine
+                              options:NSStringDrawingUsesLineFragmentOrigin
                            attributes:attributes
                               context:nil].size.height;
 }
