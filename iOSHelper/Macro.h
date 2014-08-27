@@ -26,10 +26,12 @@
 
 // 系统版本
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define SystermVersion [[[UIDevice currentDevice] systemVersion] intValue]
 #define CurrentSystemVersion [[UIDevice currentDevice] systemVersion]
 #define isIOS7 ([[[UIDevice currentDevice] systemVersion] intValue]==7)
 #define isAfterIOS6 ([[[UIDevice currentDevice] systemVersion] intValue]>6)
 #define isAfterIOS7 ([[[UIDevice currentDevice] systemVersion] intValue]>7)
+
 // 设备类型
 #define isiPhone5 ([[UIScreen mainScreen] bounds].size.height > 480 ? YES : NO)
 // 可用屏幕的高度，iOS7以下状态栏部分不可用
