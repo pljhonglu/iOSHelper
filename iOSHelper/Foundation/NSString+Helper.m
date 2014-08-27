@@ -9,6 +9,7 @@
 #import "NSString+Helper.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "NSNumber+Helper.h"
+#import "Macro.h"
 
 @implementation NSString (Helper)
 - (NSString *)stringByTrim {
@@ -32,18 +33,27 @@
 }
 
 - (CGFloat)heightByFont:(UIFont *)font width:(CGFloat)width{
-    NSDictionary *attributes = @{NSFontAttributeName:font};
-    return [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
-                              options:NSStringDrawingUsesLineFragmentOrigin
-                           attributes:attributes
-                              context:nil].size.height;
+    if (isAfterIOS6) {
+        NSDictionary *attributes = @{NSFontAttributeName:font};
+        return [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
+                                  options:NSStringDrawingUsesLineFragmentOrigin
+                               attributes:attributes
+                                  context:nil].size.height;
+    }else{
+        return [self sizeWithFont:font forWidth:width lineBreakMode:NSLineBreakByCharWrapping].height;
+    }
+
 }
 - (CGSize)sizeByFont:(UIFont *)font width:(CGFloat)width{
-    NSDictionary *attributes = @{NSFontAttributeName:font};
-    return [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
-                              options:NSStringDrawingUsesLineFragmentOrigin
-                           attributes:attributes
-                              context:nil].size;
+    if (isAfterIOS6) {
+        NSDictionary *attributes = @{NSFontAttributeName:font};
+        return [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
+                                  options:NSStringDrawingUsesLineFragmentOrigin
+                               attributes:attributes
+                                  context:nil].size;
+    }else{
+        return [self sizeWithFont:font forWidth:width lineBreakMode:NSLineBreakByCharWrapping];
+    }
 }
 
 - (NSInteger)TextLength{

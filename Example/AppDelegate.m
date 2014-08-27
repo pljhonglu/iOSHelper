@@ -19,6 +19,9 @@
     MainViewController *mainVC = [[MainViewController alloc]init];
     self.window.rootViewController = mainVC;
     
+    
+    DLog(@"%@",isAfterIOS6? @"1":@"0");
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
