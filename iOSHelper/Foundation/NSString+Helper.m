@@ -40,7 +40,7 @@
                                attributes:attributes
                                   context:nil].size.height;
     }else{
-        return [self sizeWithFont:font forWidth:width lineBreakMode:NSLineBreakByCharWrapping].height;
+        return [self sizeWithFont:font constrainedToSize:CGSizeMake(width, CGFLOAT_MAX) lineBreakMode:NSLineBreakByCharWrapping].height;
     }
 
 }
@@ -52,7 +52,7 @@
                                attributes:attributes
                                   context:nil].size;
     }else{
-        return [self sizeWithFont:font forWidth:width lineBreakMode:NSLineBreakByCharWrapping];
+        return [self sizeWithFont:font constrainedToSize:CGSizeMake(width, CGFLOAT_MAX) lineBreakMode:NSLineBreakByCharWrapping];
     }
 }
 
