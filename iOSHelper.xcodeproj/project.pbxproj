@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0FCFBE19B078B600F3A6F7 /* NSString+HTMLReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0FCFBD19B078B600F3A6F7 /* NSString+HTMLReplace.m */; };
 		1E42215419864D5D00223B1F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E42215319864D5D00223B1F /* libz.dylib */; };
 		1E42220B1987922E00223B1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4221FD1987922E00223B1F /* AppDelegate.m */; };
 		1E42220C1987922E00223B1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E4221FF1987922E00223B1F /* InfoPlist.strings */; };
@@ -76,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E0FCFBC19B078B600F3A6F7 /* NSString+HTMLReplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLReplace.h"; sourceTree = "<group>"; };
+		1E0FCFBD19B078B600F3A6F7 /* NSString+HTMLReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLReplace.m"; sourceTree = "<group>"; };
 		1E42215319864D5D00223B1F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1E4221FC1987922E00223B1F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1E4221FD1987922E00223B1F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 		1E42221A198792E300223B1F /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				1E0FCFBC19B078B600F3A6F7 /* NSString+HTMLReplace.h */,
+				1E0FCFBD19B078B600F3A6F7 /* NSString+HTMLReplace.m */,
 				1E42221B198792E300223B1F /* NSArray+Helper.h */,
 				1E42221C198792E300223B1F /* NSArray+Helper.m */,
 				1E42221D198792E300223B1F /* NSData+Helper.h */,
@@ -565,6 +570,7 @@
 				FE14D8101993A8CA00C1A107 /* InsuranceCompany.m in Sources */,
 				1E422269198792E300223B1F /* UIScrollView+Helper.m in Sources */,
 				1E422259198792E300223B1F /* NSObject+DLIntrospection.m in Sources */,
+				1E0FCFBE19B078B600F3A6F7 /* NSString+HTMLReplace.m in Sources */,
 				1E42226E198799C800223B1F /* UIImage+ImageEffects.m in Sources */,
 				FE06F777199F469200B77883 /* NSSet+ObjectiveSugar.m in Sources */,
 				FE06F775199F469200B77883 /* NSMutableArray+ObjectiveSugar.m in Sources */,
