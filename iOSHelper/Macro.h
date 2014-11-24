@@ -29,6 +29,7 @@
 #define SystermVersion [[[UIDevice currentDevice] systemVersion] intValue]
 #define CurrentSystemVersion [[UIDevice currentDevice] systemVersion]
 #define isIOS7 ([[[UIDevice currentDevice] systemVersion] intValue]==7)
+#define isIOS8 ([[[UIDevice currentDevice] systemVersion] intValue]==8)
 #define isAfterIOS6 ([[[UIDevice currentDevice] systemVersion] intValue]>6)
 #define isAfterIOS7 ([[[UIDevice currentDevice] systemVersion] intValue]>7)
 
