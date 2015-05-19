@@ -12,7 +12,7 @@ iOS 开发的辅助类，帮助快速开发
 
 依赖：`Foundation.framework`, `CoreGraphics.framework`, `UIKit.framework`, `libz.dylib`
 
-#### cocospod
+#### CocoaPods
 
 ```
 pod 'iOSHelper', :git => 'https://github.com/pljhonglu/iOSHelper.git', :tag => 'v0.0.1'
